@@ -1,6 +1,6 @@
-select substring(email from position ('@' in email) + 1) as more_emails
-from users
-where gender = 'Male'
-group by more_emails
-order by count(1) desc
-limit 3
+SELECT substring(email FROM position ('@' IN email) + 1) AS more_emails
+FROM users
+WHERE gender = 'Male'
+GROUP BY more_emails
+ORDER BY count(1) DESC
+LIMIT 3

@@ -1,2 +1,2 @@
-delete from orders
-where status = 'cancel_order' or items > 4;
+DELETE FROM orders
+WHERE STATUS = 'cancel_order' OR items > 4;

@@ -1,20 +1,20 @@
-alter table orders
-add discount INT,
-add new_price REAL;
+ALTER TABLE orders
+ADD discount INT,
+ADD new_price REAL;
     
-alter table orders
-add CONSTRAINT discount_check CHECK (discount >= 0 and discount <= 100);
+ALTER TABLE orders
+ADD CONSTRAINT discount_check CHECK (discount >= 0 and discount <= 100);
 
-update orders
-set discount = 0
+UPDATE orders
+SET discount = 0
 , new_price = price;
 
-update orders
-set new_price = price * 0.9
+UPDATE orders
+SET new_price = price * 0.9
 , discount = 10
-where user_id in (
-  select user_id
-  from orders
-  where price = (select max(price) from orders));
+WHERE user_id IN (
+  SELECT user_id
+  FROM orders
+  WHERE price = (SELECT max(price) FROM orders));
 
-select * from orders;
+SELECT * FROM orders;
