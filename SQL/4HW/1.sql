@@ -1,11 +1,11 @@
-select city, count(age)
-from users
-group by city
-order by count(age) desc;
+SELECT city, count(age)
+FROM users
+GROUP BY city
+ORDER BY count(age) DESC;
 
-select city
-, sum(case when age >=0 and age <=20 then 1 else 0 end) as young
-, sum(case when age >=21 and age <=49 then 1 else 0 end) as adult
-, sum(case when age >=50 then 1 else 0 end) as old
-from users
-group by city;
+SELECT city
+, SUM(CASE WHEN age >=0 AND age <=20 THEN 1 ELSE 0 END) AS young
+, SUM(CASE WHEN age >=21 AND age <=49 THEN 1 ELSE 0 END) AS adult
+, SUM(CASE WHEN age >=50 THEN 1 ELSE 0 END) AS old
+FROM users
+GROUP BY city;

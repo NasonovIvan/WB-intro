@@ -1,6 +1,6 @@
-select ROUND(avg(price)::NUMERIC, 2) as avg_price
+SELECT ROUND(avg(price)::NUMERIC, 2) AS avg_price
 , category
-from products p
-where p.name like 'Hair%'
-   or p.name like 'Home%'
-group by category;
+FROM products p
+WHERE p.name LIKE 'Hair%'
+   OR p.name LIKE 'Home%'
+GROUP BY category;
